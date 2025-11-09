@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-sm gap-1">
+                <a class="nav-link text-white" href="#">Home</a>
+                <a class="nav-link text-white" href="#">Shop</a>
+                <a class="nav-link text-white" href="#">About Us</a>
+                <a class="nav-link text-white" href="#">Demos</a>
+            </nav>
+            <section>
+                <img class="object-fit-cover" src="img/Balance_Light 1.png" alt="Logo Imge">
+            </section>
+            <section class="fs-5 me-5">
+                <i class="bi bi-search pe-5"></i>
+                <i class="bi bi-bag"></i>
+            </section>
+
+
+<button>All</button>
+            <button>Shower Gel</button>
+            <button>Candle</button>
+            <button>Brush</button>
+
+            <section class="d-flex gap-5">
+                <div class="card border-0" style="width: 18rem;">
+                    <img src="img/Rectangle 5.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Portland Balance</h5>
+                        <p class="card-text">All-in-One Nourishing Moisturizer</p>
+                        <a href="#" class="text-dark">From $50.00</a>
+                    </div>
+                </div>
+                <div class="card border-0" style="width: 18rem;">
+                    <img src="img/Rectangle 6.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Portland Balance</h5>
+                        <p class="card-text">All-in-One Nourishing Moisturizer</p>
+                        <a href="#" class="text-dark">From $50.00</a>
+                    </div>
+                </div>
+                <div class="card border-0" style="width: 18rem;">
+                    <img src="img/Rectangle 7.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Portland Balance</h5>
+                        <p class="card-text">All-in-One Nourishing Moisturizer</p>
+                        <a href="#" class="text-dark">From $50.00</a>
+                    </div>
+                </div>
+                <div class="card border-0" style="width: 18rem;">
+                    <img src="img/Rectangle 8.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Portland Balance</h5>
+                        <p class="card-text">All-in-One Nourishing Moisturizer</p>
+                        <a href="#" class="text-dark">From $50.00</a>
+                    </div>
+                </div>

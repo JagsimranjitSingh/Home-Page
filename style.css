@@ -1,0 +1,89 @@
+@import url('https://example.com/path-to-harmonia-sans-pro-cyr.css');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Harmonia Sans Pro Cyr';
+}
+
+/* ------ Color ------ */
+.bg-dark-yellow {
+    background-color: #817E68 !important;
+}
+
+.bg-secondary-yellow {
+    background-color: #A8A485 !important;
+}
+
+.bg-creem {
+    background: #F3F2ED !important;
+}
+
+.navbar-toggler {
+    border: 1px solid #000000 !important;
+}
+
+.nav-pills .nav-link.active {
+    background: #A8A485 !important;
+    color: #ffffff !important;
+}
+
+.nav-pills .nav-link {
+    background-color: #EFEFEF !important;
+    color: #000 !important;
+}
+/* ------ Color ------ */
+
+/* ------ Font Styles ------ */
+.f-tenor {
+    font-family: 'Tenor Sans' !important;
+}
+/* ------ Font Styles ------ */
+
+/* ------ Negative Margin ------ */
+.mb-n3 {
+    margin-bottom: -3vh !important;
+}
+
+.mb-n1 {
+    margin-bottom: -1vh !important;
+}
+
+.mb-n2 {
+    margin-bottom: -2vh !important;
+}
+
+.ms-9 {
+    margin-left: 9vw !important;
+}
+
+.mt-n6 {
+    margin-top: -6vh !important;
+}
+
+.mb-n15 {
+    margin-bottom: -20vh !important;
+}
+/* ------ Negative Margin ------ */
+
+.input-news {
+    display: block;
+    width: 80%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.z-01 {
+    z-index: 1 !important;
+}
