@@ -51,3 +51,132 @@
                         <a href="#" class="text-dark">From $50.00</a>
                     </div>
                 </div>
+
+
+
+ <!------ Slider Section ------>
+    <section class="container-fluid p-0 my-5">
+        <div class="slider-container position-relative">
+            <!-- Background Images -->
+            <div id="sliderBg1" class="position-absolute top-0 start-0 w-100 h-100 slider-bg slider-bg-1">
+                <div class="position-absolute top-0 start-0 w-100 h-100 slider-bg-overlay"></div>
+            </div>
+            <div id="sliderBg2" class="position-absolute top-0 start-0 w-100 h-100 slider-bg slider-bg-2" style="opacity: 0;">
+                <div class="position-absolute top-0 start-0 w-100 h-100 slider-bg-overlay"></div>
+            </div>
+            <div id="sliderBg3" class="position-absolute top-0 start-0 w-100 h-100 slider-bg slider-bg-3" style="opacity: 0;">
+                <div class="position-absolute top-0 start-0 w-100 h-100 slider-bg-overlay"></div>
+            </div>
+
+            <!-- Content Container -->
+            <div class="container h-100 position-relative" style="z-index: 2;">
+                <div class="row h-100 align-items-center">
+                    <!-- Text Content -->
+                    <div class="col-12 col-lg-6 text-white position-relative">
+                        <div id="textSlide1" class="slider-text">
+                            <p class="text-uppercase mb-2">1000+ TOP SKINCARE PRODUCTS IN ONE PLACE</p>
+                            <h1 class="display-4 f-tenor mb-4">SHINE IN THE SUNLIGHT WITH OUR NEW PRIMER SKIN SERUM</h1>
+                            <p class="mb-0">A flawless, healthy, and refreshing skin is more than</p>
+                            <p class="mb-0">just hydration. Introducing our new scientifically-</p>
+                            <p class="mb-4">proven and battle-tested skin care product that</p>
+                            <p class="mb-4">repairs your skin from the inside.</p>
+                        </div>
+                        <div id="textSlide2" class="slider-text position-absolute top-0" style="opacity: 0;">
+                            <p class="text-uppercase mb-2">PREMIUM SKINCARE COLLECTION</p>
+                            <h1 class="display-4 f-tenor mb-4">NOURISH YOUR SKIN WITH NATURAL INGREDIENTS</h1>
+                            <p class="mb-0">Experience the power of nature with our</p>
+                            <p class="mb-0">carefully crafted formulas that bring out</p>
+                            <p class="mb-4">your skin's natural radiance and beauty</p>
+                            <p class="mb-4">from within.</p>
+                        </div>
+                        <div id="textSlide3" class="slider-text position-absolute top-0" style="opacity: 0;">
+                            <p class="text-uppercase mb-2">LUXURY ANTI-AGING SOLUTIONS</p>
+                            <h1 class="display-4 f-tenor mb-4">REVEAL YOUTHFUL GLOW WITH ADVANCED CARE</h1>
+                            <p class="mb-0">Turn back time with our revolutionary</p>
+                            <p class="mb-0">anti-aging formulas designed to restore</p>
+                            <p class="mb-4">elasticity, reduce fine lines, and rejuvenate</p>
+                            <p class="mb-4">your skin's appearance.</p>
+                        </div>
+                    </div>
+
+                    <!-- Product Cards Container -->
+                    <div class="col-12 col-lg-6 d-flex justify-content-center justify-content-lg-end position-relative card-height">
+                        <div class="position-relative card-max-width w-100">
+                            <div class="overflow-hidden position-relative h-100">
+                                <div class="d-flex position-relative card-slider-container h-100" id="cardSlider">
+                                    <!-- Card 1 -->
+                                    <div class="flex-shrink-0 card-width">
+                                        <div class="bg-white p-4 text-center">
+                                            <img src="img/Rectangle 5.png" class="img-fluid mb-3" alt="Product">
+                                            <p class="text-uppercase mb-1 small">PORTLAND BALANCE</p>
+                                            <h5 class="f-tenor mb-3">Detox Hydration Mask</h5>
+                                            <p class="mb-0"><span class="text-decoration-line-through text-muted">$35.00</span> <span class="text-danger fw-bold">$50.00</span></p>
+                                        </div>
+                                    </div>
+                                    <!-- Card 2 -->
+                                    <div class="flex-shrink-0 card-width">
+                                        <div class="bg-white p-4 text-center">
+                                            <img src="img/Rectangle 6.png" class="img-fluid mb-3" alt="Product">
+                                            <p class="text-uppercase mb-1 small">PORTLAND BALANCE</p>
+                                            <h5 class="f-tenor mb-3">Vitamin C Serum</h5>
+                                            <p class="mb-0"><span class="text-decoration-line-through text-muted">$40.00</span> <span class="text-danger fw-bold">$55.00</span></p>
+                                        </div>
+                                    </div>
+                                    <!-- Card 3 -->
+                                    <div class="flex-shrink-0 card-width">
+                                        <div class="bg-white p-4 text-center">
+                                            <img src="img/Rectangle 7.png" class="img-fluid mb-3" alt="Product">
+                                            <p class="text-uppercase mb-1 small">PORTLAND BALANCE</p>
+                                            <h5 class="f-tenor mb-3">Retinol Night Cream</h5>
+                                            <p class="mb-0"><span class="text-decoration-line-through text-muted">$45.00</span> <span class="text-danger fw-bold">$60.00</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Navigation Buttons -->
+                            <button onclick="prevSlide()" class="position-absolute top-50 start-0 translate-middle bg-white rounded-circle d-flex align-items-center justify-content-center border-0 shadow slider-nav-btn" style="cursor: pointer; z-index: 10;">
+                                <i class="bi bi-arrow-left text-dark fs-4"></i>
+                            </button>
+                            <button onclick="nextSlide()" class="position-absolute top-50 end-0 translate-middle bg-white rounded-circle d-flex align-items-center justify-content-center border-0 shadow slider-nav-btn" style="cursor: pointer; z-index: 10;">
+                                <i class="bi bi-arrow-right text-dark fs-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 3;
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
+        function updateSlider() {
+            const cardSlider = document.getElementById('cardSlider');
+            cardSlider.style.transform = 'translateX(-' + (currentSlide * 300) + 'px)';
+
+            for (let i = 0; i < totalSlides; i++) {
+                const bg = document.getElementById('sliderBg' + (i + 1));
+                const text = document.getElementById('textSlide' + (i + 1));
+                
+                if (i === currentSlide) {
+                    bg.style.opacity = '1';
+                    text.style.opacity = '1';
+                } else {
+                    bg.style.opacity = '0';
+                    text.style.opacity = '0';
+                }
+            }
+        }
+    </script>
+    <!------ Slider Section ------>
