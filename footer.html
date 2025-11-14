@@ -1,0 +1,2112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Footer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* Color */
+            --primary-bg: #FFFFFF;
+            --bg-1: #AE9F74;
+            --bg-2: #F6F6F6;
+            --footer-bg: #111111;
+
+            --btn-bg: #B19F6F;
+            --btn-bg-hover: #9E8C5A;
+            --t-btn-bg: #EAEAEA;
+
+            --text-1: #FFFFFF;
+            --text-2: #FDFDFD;
+            --text-3: #000000;
+            --text-4: #707070;
+            --text-5: #8A7C56;
+            --text-6: #D9D9D9;
+            /* Color */
+
+            /* Font Size */
+            --fs-1: 1.125rem;
+            --fs-2: 1rem;
+            --fs-3: 0.875rem;
+            --fs-4: 0.75rem;
+            --fs-5: 1.375rem;
+            --fs-6: 1.875rem;
+            --fs-7: 4.375rem;
+            --fs-8: 4.938rem;
+            --fs-9: 2.625rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+            font-family: 'Proxima Nova', Arial, sans-serif;
+            color: #333333;
+            background-color: var(--primary-bg);
+        }
+
+        /* ------ Footer ------ */
+        footer {
+            width: 100%;
+            min-height: 39.24vh;
+            color: var(--text-6);
+            background-color: var(--footer-bg);
+            font-size: var(--fs-3);
+            font-weight: 200;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 2rem;
+        }
+
+        #footer-links {
+            display: flex;
+            gap: 3.5vw;
+            width: 100%;
+            max-width: 1400px;
+            justify-content: space-between;
+        }
+
+        footer header {
+            color: var(--text-1);
+            font-weight: 400;
+        }
+
+        .drop-down-sec {
+            flex: 1;
+        }
+
+        .drop-down-sec ul {
+            padding: 0;
+            margin: 0;
+            line-height: 2rem;
+        }
+
+        .drop-down-sec header {
+            cursor: pointer;
+            position: relative;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        /* Desktop: No arrow icon */
+        .drop-down-sec header::after {
+            display: none;
+        }
+
+        .drop-links {
+            list-style: none;
+            transition: all 0.3s ease;
+        }
+
+        .drop-links a {
+            cursor: pointer;
+        }
+
+        .drop-links a:hover {
+            color: var(--btn-bg);
+        }
+
+        /* Newsletter section */
+        .news-logos {
+            flex: 1.5;
+        }
+
+        #newsletter {
+            margin-bottom: 2rem;
+        }
+
+        #newsletter header {
+            margin-bottom: 1rem;
+        }
+
+        #newsletter input {
+            width: 100%;
+            max-width: 400px;
+            height: 3.849vh;
+            min-height: 40px;
+            color: var(--text-1);
+            background-color: transparent;
+            border: 1px solid var(--primary-bg);
+            border-radius: 10px;
+            padding-left: 1rem;
+        }
+
+        #newsletter input::placeholder {
+            color: var(--text-6);
+        }
+
+        #connect-logo span {
+            color: var(--btn-bg);
+            font-size: var(--fs-6);
+            font-weight: 100;
+            padding-right: 0.8rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        #connect-logo span:hover {
+            color: var(--btn-bg-hover);
+        }
+
+        #connect-logo header {
+            margin-bottom: 1rem;
+        }
+
+        hr {
+            width: 100%;
+            max-width: 1400px;
+            color: #AFAFAF;
+            border: 0;
+            border-top: 1px solid #AFAFAF;
+            margin: 2rem 0;
+        }
+
+        #footer-logo {
+            width: 100%;
+            max-width: 1400px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        #footer-logo figure {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0;
+        }
+
+        #footer-logo img {
+            max-width: 100px;
+            height: auto;
+        }
+
+        /* Mobile Styles */
+        @media screen and (max-width: 768px) {
+            footer {
+                padding: 2rem 1.5rem;
+                min-height: auto;
+            }
+
+            #footer-links {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .drop-down-sec {
+                border-bottom: 1px solid #333;
+                padding: 1rem 0;
+            }
+
+            .drop-down-sec:last-child {
+                border-bottom: none;
+            }
+
+            .drop-down-sec header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 0;
+                padding: 0.5rem 0;
+            }
+
+            /* Mobile: Show arrow icon */
+            .drop-down-sec header::after {
+                content: '\f078';
+                font-family: 'Font Awesome 6 Free';
+                font-weight: 900;
+                font-size: 0.875rem;
+                transition: transform 0.3s ease;
+                display: inline-block;
+            }
+
+            .drop-down-sec header.active::after {
+                transform: rotate(180deg);
+            }
+
+            .drop-down {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            .drop-down.open {
+                max-height: 500px;
+                padding-top: 0.5rem;
+            }
+
+            .drop-links {
+                line-height: 2.5rem;
+                padding-left: 0.5rem;
+            }
+
+            .news-logos {
+                margin-top: 1rem;
+            }
+
+            #newsletter input {
+                max-width: 100%;
+                margin-bottom: 2rem;
+            }
+
+            #connect-logo span {
+                font-size: 1.5rem;
+                padding-right: 1rem;
+            }
+
+            #footer-logo {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+                margin-top: 0;
+            }
+
+            #footer-logo figure {
+                justify-content: center;
+            }
+
+            hr {
+                margin: 1.5rem 0;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            footer {
+                font-size: var(--fs-4);
+                padding: 1.5rem 1rem;
+            }
+
+            #newsletter input {
+                font-size: var(--fs-4);
+            }
+
+            #connect-logo span {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <footer>
+        <section id="footer-links">
+            <div class="drop-down-sec">
+                <header class="drop-header">
+                    <a class="drop-btn">ABOUT US</a>
+                </header>
+                <ul class="drop-down closed">
+                    <li class="drop-links"><a>The Decorilla Team</a></li>
+                    <li class="drop-links"><a>Company</a></li>
+                    <li class="drop-links"><a>Press</a></li>
+                    <li class="drop-links"><a>Reviews</a></li>
+                    <li class="drop-links"><a>Locations</a></li>
+                </ul>
+            </div>
+            <div class="drop-down-sec">
+                <header class="drop-header">
+                    <a class="drop-btn_1">CUSTOMER SUPPORT</a>
+                </header>
+                <ul class="drop-down closed">
+                    <li class="drop-links"><a>Interior Design Blog</a></li>
+                    <li class="drop-links"><a>FAQ</a></li>
+                    <li class="drop-links"><a>Contact Us</a></li>
+                    <li class="drop-links"><a>Interior Design Gift Cards</a></li>
+                </ul>
+            </div>
+            <div class="drop-down-sec">
+                <header class="drop-header">
+                    <a class="drop-btn_2">FOR DESIGNERS</a>
+                </header>
+                <ul class="drop-down closed">
+                    <li class="drop-links"><a>Sample Projects</a></li>
+                    <li class="drop-links"><a>Designer Portfolios</a></li>
+                    <li class="drop-links"><a>Designer Sign Up</a></li>
+                    <li class="drop-links"><a>Virtual Interior Design</a></li>
+                </ul>
+            </div>
+            <div class="drop-down-sec">
+                <header class="drop-header">
+                    <a class="drop-btn_3">AGREEMENTS</a>
+                </header>
+                <ul class="drop-down closed">
+                    <li class="drop-links"><a>Our Terms & Conditions</a></li>
+                    <li class="drop-links"><a>Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="news-logos">
+                <div id="newsletter">
+                    <header>SUBSCRIBE TO OUR NEWSLETTER</header>
+                    <input type="text" id="email-input" placeholder="Enter email address">
+                </div>
+                <div id="connect-logo">
+                    <header>CONNECT WITH US</header>
+                    <span><i class="fa-brands fa-instagram"></i></span>
+                    <span><i class="fa-brands fa-facebook-f"></i></span>
+                    <span><i class="fa-brands fa-pinterest-p"></i></span>
+                    <span><i class="fa-brands fa-x-twitter"></i></span>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section id="footer-logo">
+            <figure>
+                <img src="img/Group-1.png" alt="Logo" onerror="this.style.display='none'">
+                <img src="img/Group.png" alt="Logo" onerror="this.style.display='none'">
+            </figure>
+            <p>COPYRIGHT &copy; 2023</p>
+        </section>
+    </footer>
+
+    <script>
+        // ============================================
+        // STEP 1: Find all dropdown headers
+        // ============================================
+        // Get all elements with class 'drop-header' (these are the clickable titles)
+        var allHeaders = document.querySelectorAll('.drop-header');
+
+        // ============================================
+        // STEP 2: Add click event to each header
+        // ============================================
+        // Loop through each header and add a click listener
+        allHeaders.forEach(function(header) {
+            
+            // When someone clicks on a header, run this function
+            header.addEventListener('click', function() {
+                
+                // Check if screen width is 768px or less (mobile/tablet)
+                var isMobile = window.innerWidth <= 768;
+                
+                // Only allow dropdowns to work on mobile devices
+                if (isMobile) {
+                    
+                    // Find the dropdown menu right after this header
+                    // 'this' refers to the header that was clicked
+                    // 'nextElementSibling' gets the next HTML element (the <ul> dropdown)
+                    var dropdown = this.nextElementSibling;
+                    
+                    // Check if this dropdown is already open
+                    // 'classList.contains()' checks if element has the 'open' class
+                    var isAlreadyOpen = dropdown.classList.contains('open');
+                    
+                    // CLOSE ALL DROPDOWNS FIRST
+                    // Get all dropdown menus on the page
+                    var allDropdowns = document.querySelectorAll('.drop-down');
+                    
+                    // Loop through each dropdown and close it
+                    allDropdowns.forEach(function(dd) {
+                        // Remove 'open' class = hide the dropdown
+                        dd.classList.remove('open');
+                    });
+                    
+                    // Also remove 'active' class from all headers
+                    // This removes the arrow rotation
+                    var allHeadersAgain = document.querySelectorAll('.drop-header');
+                    allHeadersAgain.forEach(function(h) {
+                        h.classList.remove('active');
+                    });
+                    
+                    // NOW OPEN THE CLICKED DROPDOWN (if it wasn't already open)
+                    if (isAlreadyOpen === false) {
+                        // Add 'open' class = show the dropdown
+                        dropdown.classList.add('open');
+                        // Add 'active' class = rotate the arrow icon
+                        this.classList.add('active');
+                    }
+                    // If it was already open, we just leave it closed
+                }
+            });
+        });
+
+        // ============================================
+        // STEP 3: Set initial state when page loads
+        // ============================================
+        // Check screen size when page first loads
+        var screenWidth = window.innerWidth;
+
+        // If screen is wider than 768px (desktop)
+        if (screenWidth > 768) {
+            // Open all dropdowns automatically on desktop
+            var allDropdownsInitial = document.querySelectorAll('.drop-down');
+            allDropdownsInitial.forEach(function(dd) {
+                dd.classList.add('open');
+            });
+        }
+        // If screen is 768px or less (mobile), dropdowns stay closed by default
+
+        // ============================================
+        // STEP 4: Handle window resize
+        // ============================================
+        // When user resizes their browser window, run this function
+        window.addEventListener('resize', function() {
+            
+            // Get current screen width
+            var currentWidth = window.innerWidth;
+            
+            // If user switched to DESKTOP view (wider than 768px)
+            if (currentWidth > 768) {
+                // Open all dropdowns
+                var allDropdownsResize = document.querySelectorAll('.drop-down');
+                allDropdownsResize.forEach(function(dd) {
+                    dd.classList.add('open');
+                });
+            } 
+            // If user switched to MOBILE view (768px or less)
+            else {
+                // Close all dropdowns
+                var allDropdownsMobile = document.querySelectorAll('.drop-down');
+                allDropdownsMobile.forEach(function(dd) {
+                    dd.classList.remove('open');
+                });
+                
+                // Remove arrow rotation from all headers
+                var allHeadersMobile = document.querySelectorAll('.drop-header');
+                allHeadersMobile.forEach(function(h) {
+                    h.classList.remove('active');
+                });
+            }
+        });
+
+        // ============================================
+        // SUMMARY OF HOW IT WORKS:
+        // ============================================
+        // 1. On MOBILE (≤768px):
+        //    - Dropdowns are closed by default
+        //    - Click a header to open its dropdown
+        //    - Only one dropdown can be open at a time
+        //    - Arrow icon rotates when dropdown opens
+        //
+        // 2. On DESKTOP (>768px):
+        //    - All dropdowns are open by default
+        //    - Clicking headers does nothing
+        //    - No arrow icons shown
+        //
+        // 3. On RESIZE:
+        //    - Switching to desktop = opens all dropdowns
+        //    - Switching to mobile = closes all dropdowns
+        // ============================================
+    </script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Website</title>
+    <link href="https://fonts.cdnfonts.com/css/ethereal" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Linking SwiperJS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <style>
+        /* ------ Global Styles ------ */
+        @font-face {
+            font-family: 'Proxima Nova';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Proxima Nova'), url('https://fonts.cdnfonts.com/s/27118/Mark Simonson  Proxima Nova Regular Italic.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Proxima Nova';
+            font-style: normal;
+            font-weight: 400;
+            src: local('Proxima Nova'), url('https://fonts.cdnfonts.com/s/27118/Mark Simonson  Proxima Nova Regular.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Proxima Nova';
+            font-style: normal;
+            font-weight: 250;
+            src: local('Proxima Nova'), url('https://fonts.cdnfonts.com/s/27118/Mark Simonson  Proxima Nova Thin Italic.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Proxima Nova';
+            font-style: normal;
+            font-weight: 250;
+            src: local('Proxima Nova'), url('https://fonts.cdnfonts.com/s/27118/Mark Simonson  Proxima Nova Thin.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Proxima Nova';
+            font-style: normal;
+            font-weight: 300;
+            src: local('Proxima Nova'), url('https://fonts.cdnfonts.com/s/27118/Mark Simonson  Proxima Nova Light.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Proxima Nova';
+            font-style: italic;
+            font-weight: 300;
+            src: local('Proxima Nova'), url('https://fonts.cdnfonts.com/s/27118/Mark Simonson  Proxima Nova Light Italic.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Proxima Nova';
+            font-style: normal;
+            font-weight: 600;
+            src: local('Proxima Nova'), url('https://fonts.cdnfonts.com/s/27118/Mark Simonson  Proxima Nova Semibold Italic.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Proxima Nova';
+            font-style: normal;
+            font-weight: 600;
+            src: local('Proxima Nova'), url('https://fonts.cdnfonts.com/s/27118/Mark Simonson  Proxima Nova Semibold.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Proxima Nova';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Proxima Nova'), url('https://fonts.cdnfonts.com/s/27118/Mark Simonson  Proxima Nova Bold Italic.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Proxima Nova';
+            font-style: normal;
+            font-weight: 700;
+            src: local('Proxima Nova'), url('https://fonts.cdnfonts.com/s/27118/Mark Simonson  Proxima Nova Bold.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Proxima Nova';
+            font-style: normal;
+            font-weight: 800;
+            src: local('Proxima Nova'), url('https://fonts.cdnfonts.com/s/27118/Mark Simonson  Proxima Nova Extrabold Italic.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Proxima Nova';
+            font-style: normal;
+            font-weight: 800;
+            src: local('Proxima Nova'), url('https://fonts.cdnfonts.com/s/27118/Mark Simonson  Proxima Nova Extrabold.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Proxima Nova';
+            font-style: normal;
+            font-weight: 900;
+            src: local('Proxima Nova'), url('https://fonts.cdnfonts.com/s/27118/Mark Simonson  Proxima Nova Black Italic.woff') format('woff');
+        }
+
+        @font-face {
+            font-family: 'Proxima Nova';
+            font-style: normal;
+            font-weight: 900;
+            src: local('Proxima Nova'), url('https://fonts.cdnfonts.com/s/27118/Mark Simonson  Proxima Nova Black.woff') format('woff');
+        }
+
+        :root {
+            /* Color */
+            --primary-bg: #FFFFFF;
+            --bg-1: #AE9F74;
+            --bg-2: #F6F6F6;
+            --footer-bg: #111111;
+
+            --btn-bg: #B19F6F;
+            --btn-bg-hover: #9E8C5A;
+            --t-btn-bg: #EAEAEA;
+
+            --text-1: #FFFFFF;
+            --text-2: #FDFDFD;
+            --text-3: #000000;
+            --text-4: #707070;
+            --text-5: #8A7C56;
+            --text-6: #D9D9D9;
+            /* Color */
+
+            /* Font Size */
+            --fs-1: 1.125rem;
+            /* 18px */
+            --fs-2: 1rem;
+            /* 16px */
+            --fs-3: 0.875rem;
+            /* 14px */
+            --fs-4: 0.75rem;
+            /* 12px */
+            --fs-5: 1.375rem;
+            /* 22px */
+            --fs-6: 1.875rem;
+            /* 30px */
+            --fs-7: 4.375rem;
+            /* 70px */
+            --fs-8: 4.938rem;
+            /* 79px */
+            --fs-9: 2.625rem;
+            /* 42px */
+            /* Font Size */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+            font-family: 'Proxima Nova';
+            color: #333333;
+            background-color: var(--primary-bg);
+        }
+
+        /* Fade in tabs */
+        @-webkit-keyframes fadeEffect {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeEffect {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+
+        /* ------ Global Styles ------ */
+
+        /* ------ Navigation ------ */
+        #code-text {
+            width: 100%;
+            height: 5vh;
+            background-color: var(--bg-1);
+            color: var(--text-1);
+            font-size: var(--fs-1);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #code-text span {
+            font-weight: 700;
+        }
+
+        nav {
+            width: 100%;
+            height: 7.685vh;
+            background: var(--primary-bg);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: var(--text-3);
+        }
+
+        nav div {
+            box-sizing: border-box;
+        }
+
+        .logo {
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            width: 40%;
+            color: var(--text-3);
+            font-size: var(--fs-2);
+            font-weight: 300;
+        }
+
+        .nav-links a {
+            display: block;
+            text-decoration: none;
+            color: var(--text-3);
+            transition: 0.5s ease;
+            transform: translateX(0%);
+        }
+
+        .nav-btn {
+            width: 12.494vw;
+            height: 4vh;
+            font-size: var(--fs-1);
+            color: var(--text-1);
+            background-color: var(--btn-bg);
+            text-align: center;
+            border: none;
+            border-radius: 10px;
+            /* padding: 1vh 0; */
+        }
+
+        .burger {
+            display: none;
+        }
+
+        .bell-icon {
+            display: none;
+        }
+
+        #nav-icon {
+            display: none;
+        }
+
+        .burger div {
+            width: 26px;
+            height: 2px;
+            background: var(--text-4);
+            margin: 5px;
+            transition: all 0.5s ease;
+        }
+
+        @media only screen and (max-width: 576px) {
+            nav {
+                justify-content: space-between;
+            }
+
+            .logo {
+                margin-left: 5vw;
+            }
+
+            .nav-links {
+                position: absolute;
+                right: 0;
+                top: 7vh;
+                min-height: 98vh;
+                background: transparent;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                /* transform: translateX(100%); */
+                transition: All 0.5s ease-in;
+            }
+
+            .nav-links a {
+                opacity: 0;
+                padding-top: 3vh;
+                font-size: var(--fs-1);
+
+            }
+
+            .nav-btn {
+                width: 36.494vw;
+                font-size: var(--fs-3);
+            }
+
+            #nav-icon {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                color: var(--text-4);
+                margin-right: 4vw;
+            }
+
+            .burger {
+                display: block;
+            }
+
+            .bell-icon {
+                display: block;
+                font-size: var(--fs-1);
+                margin-right: 1.5vw;
+            }
+
+            #code-text {
+                display: none;
+            }
+
+        }
+
+        .nav-active {
+            transform: translateX(0);
+            /* From https://css.glass */
+            background: rgba(255, 255, 255, 0.15);
+            /* border-radius: 16px; */
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(8.2px);
+            -webkit-backdrop-filter: blur(8.2px);
+        }
+
+        @keyframes navLinkFade {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .toggle .line1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .toggle .line2 {
+            opacity: 0;
+        }
+
+        .toggle .line3 {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* ------ End of Navigation ------ */
+
+        /* ------ Hero Section ------ */
+        #hero-sec {
+            width: 100%;
+            height: 87.3vh;
+            background-image: url('img/Hero-bg.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #hero-text {
+            text-align: center;
+            background: radial-gradient(#33333315, #33333300);
+            border-radius: 50%;
+        }
+
+        #hero-text header {
+            width: 35.302vw;
+            color: var(--text-1);
+            font-family: 'Ethereal';
+            font-size: var(--fs-7);
+            margin-top: 6.481vh;
+            margin-bottom: 10.185vh;
+        }
+
+        #hero-btn_1 {
+            color: var(--text-1);
+            background-color: transparent;
+            font-size: var(--fs-4);
+            font-weight: 600;
+            padding: 0.3vh 0;
+            border: none;
+            border-bottom: 1px solid var(--primary-bg);
+        }
+
+        #hero-btn_2 {
+            width: 16.162vw;
+            height: 4.463vh;
+            color: var(--text-2);
+            background-color: var(--btn-bg);
+            font-size: var(--fs-1);
+            border: none;
+            border-radius: 10px;
+        }
+
+        @media screen and (max-width: 576px) {
+            #hero-text {
+                border-radius: 0%;
+            }
+
+            #hero-text header {
+                width: 80.302vw;
+                margin-top: 3.481vh;
+                margin-bottom: 5.185vh;
+            }
+
+            #hero-btn_2 {
+                width: 45.162vw;
+                height: 4.463vh;
+            }
+        }
+
+        /* ------ End of Hero Section ------ */
+
+        /* ------ Recent Stories ------ */
+        #stories {
+            width: 100%;
+            height: 98.426vh;
+            margin-bottom: 3vh;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #stories-content header {
+            font-family: 'Ethereal';
+            text-align: center;
+            font-size: var(--fs-6);
+            margin-top: 7vh;
+            margin-bottom: 5.704vh;
+        }
+
+        .cards_1 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 1vw;
+        }
+
+        .card_1 figure {
+            margin: 0;
+        }
+
+        .card_1-text {
+            width: 80%;
+        }
+
+        .text_1 {
+            font-size: var(--fs-1);
+            font-weight: 500;
+        }
+
+        .c-date {
+            font-size: var(--fs-3);
+            font-weight: 300;
+        }
+
+        @media screen and (max-width: 576px) {
+            #stories {
+                height: auto;
+            }
+
+            #stories-content {
+                width: 88%;
+                padding-bottom: 5vh;
+            }
+
+            #stories-content header {
+                margin-top: 9vh;
+                margin-bottom: 3.704vh;
+            }
+
+            .cards_1 {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        /* ------ End of Recent Stories ------ */
+
+        /* ------ Real Before & After Stories ------ */
+        #stories-2 {
+            width: 100%;
+            height: 78vh;
+            background-color: var(--bg-2);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #stories-content-2 {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #lg-heading {
+            font-family: 'Ethereal';
+            text-align: center;
+            font-size: var(--fs-6);
+            margin-top: 7vh;
+            margin-bottom: 5.704vh;
+        }
+
+        #m-heading {
+            display: none;
+            font-family: 'Ethereal';
+            text-align: center;
+            font-size: var(--fs-6);
+            margin-top: 3vh;
+            margin-bottom: 2.704vh;
+        }
+
+        .tab-content {
+            -webkit-animation: fadeEffect 1s;
+            animation: fadeEffect 1s;
+        }
+
+        .tab-btn {
+            margin-bottom: 3vh;
+        }
+
+        .tab-link {
+            font-size: var(--fs-3);
+            background-color: var(--t-btn-bg);
+            border: none;
+            border-radius: 35px;
+            padding: 0.9vh 1vw;
+            margin: 0 0.3vw;
+            cursor: pointer;
+        }
+
+        .tab-link:hover {
+            background-color: var(--primary-bg);
+        }
+
+        .tab-link.active {
+            background-color: var(--primary-bg);
+        }
+
+        .card_slider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-wrapper {
+            max-width: 1100px;
+            margin: 0 60px 35px;
+            padding: 20px 10px;
+            overflow: hidden;
+        }
+
+        .card-item figure {
+            margin: 0;
+            border-radius: 10px;
+            filter: drop-shadow(0 3px 6px #0000001A);
+        }
+
+        .card_2-text {
+            padding: 0 0 3px 14px;
+        }
+
+        .card-list .card-item .card-link {
+            background: var(--primary-bg);
+            user-select: none;
+            transition: 0.2s ease;
+        }
+
+        .card-list .card-item .card-link:active {
+            cursor: grabbing;
+        }
+
+        .card-list .card-link .card-image {
+            width: 100%;
+            height: 25.463vh;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .card-wrapper .swiper-pagination-bullet {
+            display: none;
+            height: 13px;
+            width: 13px;
+            opacity: 0.5;
+            background: #707070;
+        }
+
+        .card-wrapper .swiper-pagination-bullet-active {
+            opacity: 1;
+        }
+
+        .card-wrapper .swiper-slide-button {
+            width: 45px;
+            color: #333333;
+            background-color: var(--primary-bg);
+            border: none;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: var(--fs-4);
+            margin-top: -35px;
+            filter: drop-shadow(0 1px 8px #00000029);
+        }
+
+        .swiper-button-prev::after {
+            font-size: var(--fs-4);
+            font-weight: 700;
+        }
+
+        .swiper-button-next::after {
+            font-size: var(--fs-4);
+            font-weight: 700;
+        }
+
+        @media screen and (max-width: 576px) {
+
+            #stories-2 {
+                width: 100%;
+                height: 78.444vh;
+            }
+
+            #lg-heading {
+                display: none;
+            }
+
+            #m-heading {
+                display: block;
+            }
+
+            .card-wrapper .swiper-slide-button {
+                display: none;
+            }
+
+            .tab-btn {
+                margin-left: 7vw;
+                margin-bottom: 1vh;
+            }
+
+            .tab-link {
+                padding: 0.9vh 3vw;
+                margin: 0 2.3vw 1vh;
+            }
+
+            .card-wrapper {
+                max-width: 400px;
+                margin: 0 0 32px;
+                padding: 17px 7px;
+            }
+
+            .card-item figure {
+                border-radius: 10px;
+            }
+
+            .card_2-text {
+                padding: 0 0 6px 18px;
+            }
+
+            .card-list .card-link .card-image {
+                width: 100%;
+                height: 25.463vh;
+            }
+
+            .card-wrapper .swiper-pagination-bullet {
+                display: inline-block;
+                height: 8px;
+                width: 8px;
+            }
+        }
+
+        /* ------ End of Real Before & After Stories ------ */
+
+        /* ------ Background Section ------ */
+        #bg-sec {
+            width: 100%;
+            height: 85.444vh;
+            color: var(--text-1);
+            background-image: url("img/image\ 1.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #bg-content {
+            display: inline-block;
+            margin: 12.833vh 0 0 11.096vw;
+            background: radial-gradient(#33333374, #33333312, #33333300);
+        }
+
+        #bg-text header {
+            width: 33.634vw;
+            font-family: 'Ethereal';
+            font-size: var(--fs-8);
+            font-weight: 200;
+        }
+
+        #bg-text p {
+            width: 24.681vw;
+            font-size: var(--fs-6);
+        }
+
+        #bg-content button {
+            width: 15.162vw;
+            height: 4.463vh;
+            font-size: var(--fs-1);
+            color: var(--text-1);
+            background-color: var(--btn-bg);
+            border: none;
+            border-radius: 10px;
+        }
+
+        @media screen and (max-width: 576px) {
+            #bg-sec {
+                height: 72.978vh;
+            }
+
+            #bg-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 0;
+                padding-top: 17vh;
+                text-align: center;
+            }
+
+            #bg-content article {
+                margin-bottom: 10vh;
+
+            }
+
+            #bg-text header {
+                width: 74.634vw;
+                font-size: var(--fs-9);
+                font-weight: 500;
+            }
+
+            #bg-text p {
+                width: 78.681vw;
+                font-size: var(--fs-5);
+                font-weight: 500;
+            }
+
+            #bg-content button {
+                width: 55.162vw;
+                height: 4.463vh;
+            }
+        }
+
+        /* ------ End of Background Section ------ */
+
+        /* ------ Tips & Guides ------ */
+        #tip-sec {
+            width: 100%;
+            height: 78.648vh;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #tip-content {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #tip-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 3vh;
+            margin-bottom: 3.37vh;
+        }
+
+        #tip-text header {
+            font-family: 'Ethereal';
+            font-size: var(--fs-6);
+            font-weight: 300;
+        }
+
+        #tip-text p {
+            width: 38vw;
+            color: var(--text-4);
+            font-size: var(--fs-2);
+            font-weight: 300;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 576px) {
+            #tip-sec {
+                height: 85.648vh;
+            }
+
+            #tip-text header {
+                margin-bottom: 4vh;
+
+            }
+
+            #tip-text p {
+                width: 80vw;
+            }
+        }
+
+        /* ------ End of Tips & Guides ------ */
+
+        /* ------ Categories ------ */
+        .cat-sec {
+            width: 100%;
+            height: 120.481vh;
+            background-color: var(--bg-2);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cat-content {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cat-content header {
+            font-family: 'Ethereal';
+            font-size: var(--fs-6);
+            font-weight: 300;
+            margin: 5.5vh 0;
+        }
+
+        .tab-content_1 {
+            -webkit-animation: fadeEffect 1s;
+            animation: fadeEffect 1s;
+        }
+
+        .tab-btn_1 {
+            margin-bottom: 5vh;
+            text-align: center;
+        }
+
+        .tab-link_1 {
+            font-size: var(--fs-3);
+            background-color: var(--t-btn-bg);
+            border: none;
+            border-radius: 35px;
+            padding: 0.9vh 1vw;
+            margin: 0 0.3vw;
+            cursor: pointer;
+        }
+
+        .tab-link_1:hover {
+            background-color: var(--primary-bg);
+        }
+
+        .tab-link_1.active-1 {
+            background-color: var(--primary-bg);
+        }
+
+        .cat-btn {
+            display: flex;
+            justify-content: center;
+            margin-top: 7vh;
+        }
+
+        .cat-btn button {
+            font-size: var(--fs-2);
+            font-weight: 600;
+            color: var(--text-5);
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid var(--text-5);
+            padding: 0;
+        }
+
+        @media screen and (max-width: 576px) {
+            .cat-sec {
+                height: auto;
+            }
+
+            #cat-sec-1 {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+                align-items: center;
+            }
+
+            .tab-btn_1 {
+                margin-bottom: 5vh;
+                margin-left: 4vw;
+                text-align: left;
+            }
+
+            #cat-content-2 {
+                width: 88%;
+            }
+
+            .tab-link_1 {
+                padding: 1vh 3.5vw;
+                margin: 0.8vh 1vw;
+            }
+
+            .cat-btn {
+                margin-top: 5vh;
+                margin-bottom: 8vh;
+            }
+        }
+
+        /* ------ End of Categories ------ */
+
+        /* ------ Footer ------ */
+        footer {
+            width: 100%;
+            min-height: 39.24vh;
+            color: var(--text-6);
+            background-color: var(--footer-bg);
+            font-size: var(--fs-3);
+            font-weight: 200;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 2rem;
+        }
+
+        #footer-links {
+            display: flex;
+            gap: 3.5vw;
+            width: 100%;
+            max-width: 1400px;
+            justify-content: space-between;
+        }
+
+        footer header {
+            color: var(--text-1);
+            font-weight: 400;
+        }
+
+        .drop-down-sec {
+            flex: 1;
+        }
+
+        .drop-down-sec ul {
+            padding: 0;
+            margin: 0;
+            line-height: 2rem;
+        }
+
+        .drop-down-sec header {
+            cursor: pointer;
+            position: relative;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        /* Desktop: No arrow icon */
+        .drop-down-sec header::after {
+            display: none;
+        }
+
+        .drop-links {
+            list-style: none;
+            transition: all 0.3s ease;
+        }
+
+        .drop-links a {
+            cursor: pointer;
+        }
+
+        .drop-links a:hover {
+            color: var(--btn-bg);
+        }
+
+        /* Newsletter section */
+        .news-logos {
+            flex: 1.5;
+        }
+
+        #newsletter {
+            margin-bottom: 2rem;
+        }
+
+        #newsletter header {
+            margin-bottom: 1rem;
+        }
+
+        #newsletter input {
+            width: 100%;
+            max-width: 400px;
+            height: 3.849vh;
+            min-height: 40px;
+            color: var(--text-1);
+            background-color: transparent;
+            border: 1px solid var(--primary-bg);
+            border-radius: 10px;
+            padding-left: 1rem;
+        }
+
+        #newsletter input::placeholder {
+            color: var(--text-6);
+        }
+
+        #connect-logo span {
+            color: var(--btn-bg);
+            font-size: var(--fs-6);
+            font-weight: 100;
+            padding-right: 0.8rem;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        #connect-logo span:hover {
+            color: var(--btn-bg-hover);
+        }
+
+        #connect-logo header {
+            margin-bottom: 1rem;
+        }
+
+        hr {
+            width: 100%;
+            max-width: 1400px;
+            color: #AFAFAF;
+            border: 0;
+            border-top: 1px solid #AFAFAF;
+            margin: 2rem 0;
+        }
+
+        #footer-logo {
+            width: 100%;
+            max-width: 1400px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        #footer-logo figure {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0;
+        }
+
+        #footer-logo img {
+            max-width: 100px;
+            height: auto;
+        }
+
+        /* Mobile Styles */
+        @media screen and (max-width: 768px) {
+            footer {
+                padding: 2rem 1.5rem;
+                min-height: auto;
+            }
+
+            #footer-links {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .drop-down-sec {
+                border-bottom: 1px solid #333;
+                padding: 1rem 0;
+            }
+
+            .drop-down-sec:last-child {
+                border-bottom: none;
+            }
+
+            .drop-down-sec header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 0;
+                padding: 0.5rem 0;
+            }
+
+            /* Mobile: Show arrow icon */
+            .drop-down-sec header::after {
+                content: '\f078';
+                font-family: 'Font Awesome 6 Free';
+                font-weight: 900;
+                font-size: 0.875rem;
+                transition: transform 0.3s ease;
+                display: inline-block;
+            }
+
+            .drop-down-sec header.active::after {
+                transform: rotate(180deg);
+            }
+
+            .drop-down {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            .drop-down.open {
+                max-height: 500px;
+                padding-top: 0.5rem;
+            }
+
+            .drop-links {
+                line-height: 2.5rem;
+                padding-left: 0.5rem;
+            }
+
+            .news-logos {
+                margin-top: 1rem;
+            }
+
+            #newsletter input {
+                max-width: 100%;
+                margin-bottom: 2rem;
+            }
+
+            #connect-logo span {
+                font-size: 1.5rem;
+                padding-right: 1rem;
+            }
+
+            #footer-logo {
+                flex-direction: column;
+                text-align: center;
+                gap: 1.5rem;
+                margin-top: 0;
+            }
+
+            #footer-logo figure {
+                justify-content: center;
+            }
+
+            hr {
+                margin: 1.5rem 0;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            footer {
+                font-size: var(--fs-4);
+                padding: 1.5rem 1rem;
+            }
+
+            #newsletter input {
+                font-size: var(--fs-4);
+            }
+
+            #connect-logo span {
+                font-size: 1.25rem;
+            }
+        }
+
+        /* ------ End of Footer ------ */
+    </style>
+</head>
+
+<body>
+    <!------ Navigation ------>
+    <header>
+        <article id="code-text">
+            Design at Home Flash Sale! <span>&nbsp;$120 off&nbsp;</span> with code DESIGNATHOME120
+        </article>
+
+        <nav>
+            <figure class="logo">
+                <img src="img/Logo-Dark.png" alt="Logo" onerror="this.style.display='none'">
+            </figure>
+            <div class="nav-links">
+                <a><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="#">BLOG</a>
+                <a href="#">HOME</a>
+                <a href="#">HOW IT WORKS</a>
+                <a href="#">PORTFOLIO</a>
+                <a><button class="nav-btn">FIND YOUR STYLE</button></a>
+            </div>
+            <div id="nav-icon">
+                <div class="bell-icon">
+                    <i class="fa-regular fa-bell"></i>
+                </div>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!------ End of Navigation ------>
+
+    <!------ Hero Section ------>
+    <section id="hero-sec">
+        <article id="hero-text">
+            <button id="hero-btn_1">FEATURED STORY</button>
+            <header>Top 15 Affordable Interior Design Tips</header>
+            <button id="hero-btn_2">READ MORE</button>
+        </article>
+    </section>
+    <!------ End of Hero Section ------>
+
+    <!------ Recent Stories ------>
+    <section id="stories">
+        <div id="stories-content">
+            <header>Recent Stories</header>
+            <div class="cards_1">
+                <div class="card_1">
+                    <figure>
+                        <img src="img/Vector.png" alt="Card img" onerror="this.src='https://via.placeholder.com/400x300'">
+                        <figcaption class="card_1-text">
+                            <p class="text_1">Before & After: His And Hers Home Office Design</p>
+                            <p class="c-date">15/02/2023</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card_1">
+                    <figure>
+                        <img src="img/Mask group.png" alt="Card img" onerror="this.src='https://via.placeholder.com/400x300'">
+                        <figcaption class="card_1-text">
+                            <p class="text_1">Essential Checklist For Your Office Interior Design</p>
+                            <p class="c-date">15/02/2023</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card_1">
+                    <figure>
+                        <img src="img/Vector (1).png" alt="Card img" onerror="this.src='https://via.placeholder.com/400x300'">
+                        <figcaption class="card_1-text">
+                            <p class="text_1">Office Interior Design Services: 10 Best In 2023</p>
+                            <p class="c-date">15/02/2023</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card_1">
+                    <figure>
+                        <img src="img/Vector.png" alt="Card img" onerror="this.src='https://via.placeholder.com/400x300'">
+                        <figcaption class="card_1-text">
+                            <p class="text_1">Before & After: His And Hers Home Office Design</p>
+                            <p class="c-date">15/02/2023</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card_1">
+                    <figure>
+                        <img src="img/Mask group.png" alt="Card img" onerror="this.src='https://via.placeholder.com/400x300'">
+                        <figcaption class="card_1-text">
+                            <p class="text_1">Essential Checklist For Your Office Interior Design</p>
+                            <p class="c-date">15/02/2023</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="card_1">
+                    <figure>
+                        <img src="img/Vector (1).png" alt="Card img" onerror="this.src='https://via.placeholder.com/400x300'">
+                        <figcaption class="card_1-text">
+                            <p class="text_1">Office Interior Design Services: 10 Best In 2023</p>
+                            <p class="c-date">15/02/2023</p>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!------ End of Recent Stories ------>
+
+    <!-- Note: The remaining sections (stories-2, bg-sec, tip-sec, cat-sec) are omitted for brevity but remain unchanged in your original code -->
+
+    <!------ Footer ------>
+    <footer>
+        <section id="footer-links">
+            <div class="drop-down-sec">
+                <header class="drop-header">
+                    <a class="drop-btn">ABOUT US</a>
+                </header>
+                <ul class="drop-down closed">
+                    <li class="drop-links"><a>The Decorilla Team</a></li>
+                    <li class="drop-links"><a>Company</a></li>
+                    <li class="drop-links"><a>Press</a></li>
+                    <li class="drop-links"><a>Reviews</a></li>
+                    <li class="drop-links"><a>Locations</a></li>
+                </ul>
+            </div>
+            <div class="drop-down-sec">
+                <header class="drop-header">
+                    <a class="drop-btn_1">CUSTOMER SUPPORT</a>
+                </header>
+                <ul class="drop-down closed">
+                    <li class="drop-links"><a>Interior Design Blog</a></li>
+                    <li class="drop-links"><a>FAQ</a></li>
+                    <li class="drop-links"><a>Contact Us</a></li>
+                    <li class="drop-links"><a>Interior Design Gift Cards</a></li>
+                </ul>
+            </div>
+            <div class="drop-down-sec">
+                <header class="drop-header">
+                    <a class="drop-btn_2">FOR DESIGNERS</a>
+                </header>
+                <ul class="drop-down closed">
+                    <li class="drop-links"><a>Sample Projects</a></li>
+                    <li class="drop-links"><a>Designer Portfolios</a></li>
+                    <li class="drop-links"><a>Designer Sign Up</a></li>
+                    <li class="drop-links"><a>Virtual Interior Design</a></li>
+                </ul>
+            </div>
+            <div class="drop-down-sec">
+                <header class="drop-header">
+                    <a class="drop-btn_3">AGREEMENTS</a>
+                </header>
+                <ul class="drop-down closed">
+                    <li class="drop-links"><a>Our Terms & Conditions</a></li>
+                    <li class="drop-links"><a>Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="news-logos">
+                <div id="newsletter">
+                    <header>SUBSCRIBE TO OUR NEWSLETTER</header>
+                    <input type="text" id="email-input" placeholder="Enter email address">
+                </div>
+                <div id="connect-logo">
+                    <header>CONNECT WITH US</header>
+                    <span><i class="fa-brands fa-instagram"></i></span>
+                    <span><i class="fa-brands fa-facebook-f"></i></span>
+                    <span><i class="fa-brands fa-pinterest-p"></i></span>
+                    <span><i class="fa-brands fa-x-twitter"></i></span>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section id="footer-logo">
+            <figure>
+                <img src="img/Group-1.png" alt="Logo" onerror="this.style.display='none'">
+                <img src="img/Group.png" alt="Logo" onerror="this.style.display='none'">
+            </figure>
+            <p>COPYRIGHT &copy; 2023</p>
+        </section>
+    </footer>
+    <!------ End of Footer ------>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // ============================================
+        // NAVIGATION MENU TOGGLE
+        // ============================================
+        const navSlide = () => {
+            const burger = document.querySelector(".burger");
+            const nav = document.querySelector(".nav-links");
+            const navLinks = document.querySelectorAll(".nav-links a");
+
+            burger.addEventListener("click", () => {
+                nav.classList.toggle("nav-active");
+
+                navLinks.forEach((link, index) => {
+                    if (link.style.animation) {
+                        link.style.animation = "";
+                    } else {
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s `;
+                    }
+                });
+                burger.classList.toggle("toggle");
+            });
+        };
+
+        navSlide();
+
+        // ============================================
+        // REAL BEFORE & AFTER STORIES TAB FUNCTION
+        // ============================================
+        function story(evt, storyName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(storyName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        if (document.getElementById("defaultOpen")) {
+            document.getElementById("defaultOpen").click();
+        }
+
+        // ============================================
+        // SWIPER CAROUSEL INITIALIZATION
+        // ============================================
+        new Swiper('.card-wrapper', {
+            loop: true,
+            spaceBetween: 36,
+
+            // Pagination bullets
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // Responsive breakpoints
+            breakpoints: {
+                0: {
+                    slidesPerView: 1.2,
+                    spaceBetween: 15,
+                    centeredSlides: true
+                },
+                768: {
+                    slidesPerView: 2
+                },
+                1024: {
+                    slidesPerView: 3
+                }
+            }
+        });
+
+        // ============================================
+        // CATEGORIES TAB FUNCTION
+        // ============================================
+        function categories(evt, catName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content_1");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-link_1");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active-1", "");
+            }
+            document.getElementById(catName).style.display = "block";
+            evt.currentTarget.className += " active-1";
+        }
+
+        // Get the element with id="defaultOpen_1" and click on it
+        if (document.getElementById("defaultOpen_1")) {
+            document.getElementById("defaultOpen_1").click();
+        }
+
+        // ============================================
+        // FOOTER DROPDOWN FUNCTIONALITY
+        // ============================================
+        // STEP 1: Find all dropdown headers
+        // ============================================
+        // Get all elements with class 'drop-header' (these are the clickable titles)
+        var allHeaders = document.querySelectorAll('.drop-header');
+
+        // ============================================
+        // STEP 2: Add click event to each header
+        // ============================================
+        // Loop through each header and add a click listener
+        allHeaders.forEach(function(header) {
+            
+            // When someone clicks on a header, run this function
+            header.addEventListener('click', function() {
+                
+                // Check if screen width is 768px or less (mobile/tablet)
+                var isMobile = window.innerWidth <= 768;
+                
+                // Only allow dropdowns to work on mobile devices
+                if (isMobile) {
+                    
+                    // Find the dropdown menu right after this header
+                    // 'this' refers to the header that was clicked
+                    // 'nextElementSibling' gets the next HTML element (the <ul> dropdown)
+                    var dropdown = this.nextElementSibling;
+                    
+                    // Check if this dropdown is already open
+                    // 'classList.contains()' checks if element has the 'open' class
+                    var isAlreadyOpen = dropdown.classList.contains('open');
+                    
+                    // CLOSE ALL DROPDOWNS FIRST
+                    // Get all dropdown menus on the page
+                    var allDropdowns = document.querySelectorAll('.drop-down');
+                    
+                    // Loop through each dropdown and close it
+                    allDropdowns.forEach(function(dd) {
+                        // Remove 'open' class = hide the dropdown
+                        dd.classList.remove('open');
+                    });
+                    
+                    // Also remove 'active' class from all headers
+                    // This removes the arrow rotation
+                    var allHeadersAgain = document.querySelectorAll('.drop-header');
+                    allHeadersAgain.forEach(function(h) {
+                        h.classList.remove('active');
+                    });
+                    
+                    // NOW OPEN THE CLICKED DROPDOWN (if it wasn't already open)
+                    if (isAlreadyOpen === false) {
+                        // Add 'open' class = show the dropdown
+                        dropdown.classList.add('open');
+                        // Add 'active' class = rotate the arrow icon
+                        this.classList.add('active');
+                    }
+                    // If it was already open, we just leave it closed
+                }
+            });
+        });
+
+        // ============================================
+        // STEP 3: Set initial state when page loads
+        // ============================================
+        // Check screen size when page first loads
+        var screenWidth = window.innerWidth;
+
+        // If screen is wider than 768px (desktop)
+        if (screenWidth > 768) {
+            // Open all dropdowns automatically on desktop
+            var allDropdownsInitial = document.querySelectorAll('.drop-down');
+            allDropdownsInitial.forEach(function(dd) {
+                dd.classList.add('open');
+            });
+        }
+        // If screen is 768px or less (mobile), dropdowns stay closed by default
+
+        // ============================================
+        // STEP 4: Handle window resize
+        // ============================================
+        // When user resizes their browser window, run this function
+        window.addEventListener('resize', function() {
+            
+            // Get current screen width
+            var currentWidth = window.innerWidth;
+            
+            // If user switched to DESKTOP view (wider than 768px)
+            if (currentWidth > 768) {
+                // Open all dropdowns
+                var allDropdownsResize = document.querySelectorAll('.drop-down');
+                allDropdownsResize.forEach(function(dd) {
+                    dd.classList.add('open');
+                });
+            } 
+            // If user switched to MOBILE view (768px or less)
+            else {
+                // Close all dropdowns
+                var allDropdownsMobile = document.querySelectorAll('.drop-down');
+                allDropdownsMobile.forEach(function(dd) {
+                    dd.classList.remove('open');
+                });
+                
+                // Remove arrow rotation from all headers
+                var allHeadersMobile = document.querySelectorAll('.drop-header');
+                allHeadersMobile.forEach(function(h) {
+                    h.classList.remove('active');
+                });
+            }
+        });
+
+        // ============================================
+        // SUMMARY OF HOW IT WORKS:
+        // ============================================
+        // 1. On MOBILE (≤768px):
+        //    - Dropdowns are closed by default
+        //    - Click a header to open its dropdown
+        //    - Only one dropdown can be open at a time
+        //    - Arrow icon rotates when dropdown opens
+        //
+        // 2. On DESKTOP (>768px):
+        //    - All dropdowns are open by default
+        //    - Clicking headers does nothing
+        //    - No arrow icons shown
+        //
+        // 3. On RESIZE:
+        //    - Switching to desktop = opens all dropdowns
+        //    - Switching to mobile = closes all dropdowns
+        // ============================================
+    </script>
+</body>
+
+</html>
