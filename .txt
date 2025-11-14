@@ -180,3 +180,674 @@
         }
     </script>
     <!------ Slider Section ------>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+        @import url('https://example.com/path-to-harmonia-sans-pro-cyr.css');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Harmonia Sans Pro Cyr';
+        }
+
+        /* ------ Color ------ */
+        .bg-dark-yellow {
+            background-color: #817E68 !important;
+        }
+
+        .bg-secondary-yellow {
+            background-color: #A8A485 !important;
+        }
+
+        .bg-creem {
+            background: #F3F2ED !important;
+        }
+
+        .navbar-toggler {
+            border: 1px solid #ffffff !important;
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+        }
+
+        .nav-pills .nav-link.active {
+            background: #A8A485 !important;
+            color: #ffffff !important;
+        }
+
+        .nav-pills .nav-link {
+            background-color: #EFEFEF !important;
+            color: #000 !important;
+        }
+        /* ------ Color ------ */
+
+        /* ------ Font Styles ------ */
+        .f-tenor {
+            font-family: 'Tenor Sans' !important;
+        }
+        /* ------ Font Styles ------ */
+
+        /* ------ Negative Margin ------ */
+        .mb-n3 {
+            margin-bottom: -3vh !important;
+        }
+
+        .mb-n1 {
+            margin-bottom: -1vh !important;
+        }
+
+        .mb-n2 {
+            margin-bottom: -2vh !important;
+        }
+
+        .ms-9 {
+            margin-left: 9vw !important;
+        }
+
+        .mt-n6 {
+            margin-top: -6vh !important;
+        }
+
+        .mb-n15 {
+            margin-bottom: -20vh !important;
+        }
+        /* ------ Negative Margin ------ */
+
+        .input-news {
+            display: block;
+            width: 80%;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border-radius: .25rem;
+            transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+        .z-01 {
+            z-index: 1 !important;
+        }
+
+        /* Slider Styles */
+        .slider-container {
+            height: 600px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider-bg-fixed {
+            background: url('img/Rectangle 39.png') center/cover no-repeat;
+        }
+
+        .slider-bg-overlay {
+            background: rgba(0,0,0,0.3);
+        }
+
+        .slider-nav-btn {
+            width: 50px;
+            height: 50px;
+            opacity: 1;
+        }
+
+        .card-height {
+            height: 450px;
+        }
+
+        .card-width {
+            width: 300px;
+        }
+
+        .card-max-width {
+            max-width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <!------ Hero Section ------>
+    <section class="h-75 bg-secondary-yellow text-white">
+        <article class="bg-dark-yellow text-center fs-6 py-1">Midseason Sale: 20% Off - Auto Applied at Checkout -
+            Limited Time Only</article>
+        <section class="container-fluid d-flex justify-content-between align-items-center">
+            <nav class="navbar navbar-expand-lg p-3 w-100" id="headerNav">
+                <section class="container-fluid">
+                    <a class="navbar-brand d-block d-lg-none" href="#">
+                        <img src="img/Balance_Light 1.png" />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <section class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="w-100 navbar-nav">
+                            <li class="nav-item float-start">
+                                <a class="nav-link mx-2 active text-white" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item float-start">
+                                <a class="nav-link mx-2 text-white" href="#">Shop</a>
+                            </li>
+                            <li class="nav-item float-start">
+                                <a class="nav-link mx-2 text-white" href="#">About Us</a>
+                            </li>
+                            <li class="nav-item float-start">
+                                <a class="nav-link mx-2 text-white" href="#">Demos</a>
+                            </li>
+                            <li class="nav-item d-none d-lg-block mx-auto">
+                                <a class="nav-link mx-2" href="#">
+                                    <img src="img/Balance_Light 1.png" />
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#"><i class="bi bi-search pe-3"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#"><i class="bi bi-bag"></i></a>
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+            </nav>
+        </section>
+        <section class="d-flex flex-column flex-lg-row justify-content-between">
+            <section class="d-none d-lg-flex flex-column align-items-start">
+                <img class="ms-5 object-fit-cover mt-2" src="img/Mask_group-2_2 7.png" alt="Image of girl">
+                <img class="object-fit-cover ms-9 mt-n6 mb-n15 z-01" src="img/Mask_group-2_2 12.png"
+                    alt="Image of bottle">
+                <img class="object-fit-cover z-0" src="img/Mask_group-2_2 11.png" alt="Image of landscape">
+            </section>
+            <section class="w-100 w-lg-50 d-flex flex-column justify-content-end align-items-center px-3 px-lg-0">
+                <article class="w-100 w-lg-50 align-items-center text-center mb-5">
+                    <p class="fs-6">1000+ Top beauty Products in One Place</p>
+                    <header class="fs-1 f-tenor text-center">Ideal Skin Care Products for Every Skin Type</header>
+                </article>
+                <button class="bg-dark-yellow text-white w-auto w-lg-25 border-0 py-3 px-4 mb-n2 z-01">Explore Our Store <i
+                        class="bi bi-arrow-up-right"></i></button>
+                <img class="object-fit-cover z-0 w-50 w-lg-100" src="img/Mask_group-2_2 10.png" alt="Image of flower">
+            </section>
+            <section class="d-none d-lg-flex flex-column me-4 mb-5 justify-content-end align-items-end">
+                <img class="object-fit-cover mb-n3 z-01" src="img/Mask_group-2_2 9.png" alt="Image of shoap">
+                <img class="me-5 object-fit-cover z-n1" src="img/Mask_group-2_2 8.png" alt="Image of legs">
+            </section>
+        </section>
+    </section>
+    <!------ Hero Section ------>
+
+    <!------ Popular Items ------>
+    <section class="container d-flex flex-column align-items-center mt-5 mb-5">
+        <section class="w-100">
+            <header class="f-tenor fs-3 mb-4">Popular Items</header>
+            <section class="d-flex flex-column">
+                <ul class="nav nav-pills mb-4 gap-3 flex-wrap" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active rounded-pill px-4 py-0 text-uppercase" id="pills-all-tab"
+                            data-bs-toggle="pill" data-bs-target="#pills-all" type="button" role="tab"
+                            aria-controls="pills-all" aria-selected="true">All</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link rounded-pill px-4 py-0 text-uppercase" id="pills-shower-tab"
+                            data-bs-toggle="pill" data-bs-target="#pills-shower" type="button" role="tab"
+                            aria-controls="pills-shower" aria-selected="false">Shower Gel</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link rounded-pill px-4 py-0 text-uppercase" id="pills-candle-tab"
+                            data-bs-toggle="pill" data-bs-target="#pills-candle" type="button" role="tab"
+                            aria-controls="pills-candle" aria-selected="false">Candle</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link rounded-pill px-4 py-0 text-uppercase" id="pills-brush-tab"
+                            data-bs-toggle="pill" data-bs-target="#pills-brush" type="button" role="tab"
+                            aria-controls="pills-brush" aria-selected="false">Brush</button>
+                    </li>
+                </ul>
+                <section class="tab-content" id="pills-tabContent">
+                    <section class="tab-pane fade show active" id="pills-all" role="tabpanel"
+                        aria-labelledby="pills-all-tab">
+                        <section class="row g-4">
+                            <section class="col-6 col-lg-3">
+                                <section class="card border-0">
+                                    <img src="img/Rectangle 5.png" class="card-img-top object-fit-cover" alt="...">
+                                    <section class="card-body pt-2 p-0 fs-6">
+                                        <p class="card-text mb-0">Portland Balance</p>
+                                        <p class="card-text text-uppercase">All-in-One Nourishing Moisturizer</p>
+                                        <p class="text-dark text-decoration-none">From $50.00</p>
+                                    </section>
+                                </section>
+                            </section>
+                            <section class="col-6 col-lg-3">
+                                <section class="card border-0">
+                                    <img src="img/Rectangle 6.png" class="card-img-top object-fit-cover" alt="...">
+                                    <section class="card-body pt-2 p-0 fs-6">
+                                        <p class="card-text mb-0">Portland Balance</p>
+                                        <p class="card-text text-uppercase">All-in-One Nourishing Moisturizer</p>
+                                        <p class="text-dark text-decoration-none">From $50.00</p>
+                                    </section>
+                                </section>
+                            </section>
+                            <section class="col-6 col-lg-3">
+                                <section class="card border-0">
+                                    <img src="img/Rectangle 7.png" class="card-img-top object-fit-cover" alt="...">
+                                    <section class="card-body pt-2 p-0 fs-6">
+                                        <p class="card-text mb-0">Portland Balance</p>
+                                        <p class="card-text text-uppercase">All-in-One Nourishing Moisturizer</p>
+                                        <p class="text-dark text-decoration-none">From $50.00</p>
+                                    </section>
+                                </section>
+                            </section>
+                            <section class="col-6 col-lg-3">
+                                <section class="card border-0">
+                                    <img src="img/Rectangle 8.png" class="card-img-top object-fit-cover" alt="...">
+                                    <section class="card-body pt-2 p-0 fs-6">
+                                        <p class="card-text mb-0">Portland Balance</p>
+                                        <p class="card-text text-uppercase">All-in-One Nourishing Moisturizer</p>
+                                        <p class="text-dark text-decoration-none">From $50.00</p>
+                                    </section>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                    <section class="tab-pane fade" id="pills-shower" role="tabpanel" aria-labelledby="pills-shower-tab">
+                        <section class="row g-4">
+                            <section class="col-12 col-sm-6 col-lg-3">
+                                <section class="card border-0">
+                                    <img src="img/Rectangle 5.png" class="card-img-top object-fit-cover" alt="...">
+                                    <section class="card-body pt-2 p-0 fs-6">
+                                        <p class="card-text mb-0">Portland Balance</p>
+                                        <p class="card-text text-uppercase">All-in-One Nourishing Moisturizer</p>
+                                        <p class="text-dark text-decoration-none">From $50.00</p>
+                                    </section>
+                                </section>
+                            </section>
+                            <section class="col-12 col-sm-6 col-lg-3">
+                                <section class="card border-0">
+                                    <img src="img/Rectangle 6.png" class="card-img-top object-fit-cover" alt="...">
+                                    <section class="card-body pt-2 p-0 fs-6">
+                                        <p class="card-text mb-0">Portland Balance</p>
+                                        <p class="card-text text-uppercase">All-in-One Nourishing Moisturizer</p>
+                                        <p class="text-dark text-decoration-none">From $50.00</p>
+                                    </section>
+                                </section>
+                            </section>
+                            <section class="col-12 col-sm-6 col-lg-3">
+                                <section class="card border-0">
+                                    <img src="img/Rectangle 7.png" class="card-img-top object-fit-cover" alt="...">
+                                    <section class="card-body pt-2 p-0 fs-6">
+                                        <p class="card-text mb-0">Portland Balance</p>
+                                        <p class="card-text text-uppercase">All-in-One Nourishing Moisturizer</p>
+                                        <p class="text-dark text-decoration-none">From $50.00</p>
+                                    </section>
+                                </section>
+                            </section>
+                            <section class="col-12 col-sm-6 col-lg-3">
+                                <section class="card border-0">
+                                    <img src="img/Rectangle 8.png" class="card-img-top object-fit-cover" alt="...">
+                                    <section class="card-body pt-2 p-0 fs-6">
+                                        <p class="card-text mb-0">Portland Balance</p>
+                                        <p class="card-text text-uppercase">All-in-One Nourishing Moisturizer</p>
+                                        <p class="text-dark text-decoration-none">From $50.00</p>
+                                    </section>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                    <section class="tab-pane fade" id="pills-candle" role="tabpanel" aria-labelledby="pills-candle-tab">
+                        <section class="row g-4">
+                            <section class="col-12 col-sm-6 col-lg-3">
+                                <section class="card border-0">
+                                    <img src="img/Rectangle 5.png" class="card-img-top object-fit-cover" alt="...">
+                                    <section class="card-body pt-2 p-0 fs-6">
+                                        <p class="card-text mb-0">Portland Balance</p>
+                                        <p class="card-text text-uppercase">All-in-One Nourishing Moisturizer</p>
+                                        <p class="text-dark text-decoration-none">From $50.00</p>
+                                    </section>
+                                </section>
+                            </section>
+                            <section class="col-12 col-sm-6 col-lg-3">
+                                <section class="card border-0">
+                                    <img src="img/Rectangle 6.png" class="card-img-top object-fit-cover" alt="...">
+                                    <section class="card-body pt-2 p-0 fs-6">
+                                        <p class="card-text mb-0">Portland Balance</p>
+                                        <p class="card-text text-uppercase">All-in-One Nourishing Moisturizer</p>
+                                        <p class="text-dark text-decoration-none">From $50.00</p>
+                                    </section>
+                                </section>
+                            </section>
+                            <section class="col-12 col-sm-6 col-lg-3">
+                                <section class="card border-0">
+                                    <img src="img/Rectangle 7.png" class="card-img-top object-fit-cover" alt="...">
+                                    <section class="card-body pt-2 p-0 fs-6">
+                                        <p class="card-text mb-0">Portland Balance</p>
+                                        <p class="card-text text-uppercase">All-in-One Nourishing Moisturizer</p>
+                                        <p class="text-dark text-decoration-none">From $50.00</p>
+                                    </section>
+                                </section>
+                            </section>
+                            <section class="col-12 col-sm-6 col-lg-3">
+                                <section class="card border-0">
+                                    <img src="img/Rectangle 8.png" class="card-img-top object-fit-cover" alt="...">
+                                    <section class="card-body pt-2 p-0 fs-6">
+                                        <p class="card-text mb-0">Portland Balance</p>
+                                        <p class="card-text text-uppercase">All-in-One Nourishing Moisturizer</p>
+                                        <p class="text-dark text-decoration-none">From $50.00</p>
+                                    </section>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                    <section class="tab-pane fade" id="pills-brush" role="tabpanel" aria-labelledby="pills-brush-tab">
+                        <section class="row g-4">
+                            <section class="col-12 col-sm-6 col-lg-3">
+                                <section class="card border-0">
+                                    <img src="img/Rectangle 5.png" class="card-img-top object-fit-cover" alt="...">
+                                    <section class="card-body pt-2 p-0 fs-6">
+                                        <p class="card-text mb-0">Portland Balance</p>
+                                        <p class="card-text text-uppercase">All-in-One Nourishing Moisturizer</p>
+                                        <p class="text-dark text-decoration-none">From $50.00</p>
+                                    </section>
+                                </section>
+                            </section>
+                            <section class="col-12 col-sm-6 col-lg-3">
+                                <section class="card border-0">
+                                    <img src="img/Rectangle 6.png" class="card-img-top object-fit-cover" alt="...">
+                                    <section class="card-body pt-2 p-0 fs-6">
+                                        <p class="card-text mb-0">Portland Balance</p>
+                                        <p class="card-text text-uppercase">All-in-One Nourishing Moisturizer</p>
+                                        <p class="text-dark text-decoration-none">From $50.00</p>
+                                    </section>
+                                </section>
+                            </section>
+                            <section class="col-12 col-sm-6 col-lg-3">
+                                <section class="card border-0">
+                                    <img src="img/Rectangle 7.png" class="card-img-top object-fit-cover" alt="...">
+                                    <section class="card-body pt-2 p-0 fs-6">
+                                        <p class="card-text mb-0">Portland Balance</p>
+                                        <p class="card-text text-uppercase">All-in-One Nourishing Moisturizer</p>
+                                        <p class="text-dark text-decoration-none">From $50.00</p>
+                                    </section>
+                                </section>
+                            </section>
+                            <section class="col-12 col-sm-6 col-lg-3">
+                                <section class="card border-0">
+                                    <img src="img/Rectangle 8.png" class="card-img-top object-fit-cover" alt="...">
+                                    <section class="card-body pt-2 p-0 fs-6">
+                                        <p class="card-text mb-0">Portland Balance</p>
+                                        <p class="card-text text-uppercase">All-in-One Nourishing Moisturizer</p>
+                                        <p class="text-dark text-decoration-none">From $50.00</p>
+                                    </section>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+    <!------ Popular Items ------>
+
+    <!------ Featured Items ------>
+    <section class="container d-flex align-items-center flex-column my-5 pt-5">
+        <section class="row w-100">
+            <section class="col-12 col-lg-6 pt-4 mt-lg-5">
+                <article class="mt-lg-5">
+                    <p class="text-uppercase mb-0">Featured Items</p>
+                    <header class="w-100 w-lg-75 f-tenor fs-2">Instantly unlock buttery-smooth and lush skin with our
+                        clinically-proven Prickly Pear
+                        Extract night serum.</header>
+                </article>
+                <article class="w-100 w-lg-75 f-tenor fs-4 mt-5 pt-lg-5">
+                    <hr class="mb-1 mt-lg-5">
+                    <p class="mb-0">Face <span class="fs-6 float-end"><i class="bi bi-arrow-up-right"></i> More</span>
+                    </p>
+                    <hr class="my-1">
+                    <p class="mb-0">Accessories <span class="fs-6 float-end"><i class="bi bi-arrow-up-right"></i></span>
+                    </p>
+                    <hr class="my-1">
+                    <p class="mb-0">Body <span class="fs-6 float-end"><i class="bi bi-arrow-up-right"></i></span></p>
+                </article>
+            </section>
+            <section class="col-12 col-lg-6 d-flex justify-content-center mt-4 mt-lg-0">
+                <section class="card p-0 border-0">
+                    <img src="img/02-face_533x 2.png" class="card-img object-fit-cover" alt="...">
+                    <section class="card-img-overlay d-flex flex-column">
+                        <section class="mt-2 ms-1">
+                            <button class="border-0 rounded-pill bg-light py-0 px-3 text-uppercase fs-6">Quick
+                                View</button>
+                        </section>
+                        <article class="container bg-light mt-auto mb-2 d-flex p-2">
+                            <section>
+                                <p class="card-text mb-0">Portland Balance</p>
+                                <p class="card-text f-tenor text-decoration-underline">Bioadvanced Eye Cream</p>
+                            </section>
+                            <section class="ms-auto d-flex align-items-center">$40.00</section>
+                        </article>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+    <!------ Featured Items ------>
+
+    <!------ Slider Section ------>
+    <section class="container-fluid p-0 my-5">
+        <div class="slider-container position-relative slider-bg-fixed">
+            <!-- Fixed Background Overlay -->
+            <div class="position-absolute top-0 start-0 w-100 h-100 slider-bg-overlay"></div>
+
+            <!-- Content Container -->
+            <div class="container h-100 position-relative" style="z-index: 2;">
+                <div class="row h-100 align-items-center">
+                    <!-- Fixed Text Content -->
+                    <div class="col-12 col-lg-6 text-white">
+                        <p class="text-uppercase mb-2">1000+ TOP SKINCARE PRODUCTS IN ONE PLACE</p>
+                        <h1 class="display-4 f-tenor mb-4">SHINE IN THE SUNLIGHT WITH OUR NEW PRIMER SKIN SERUM</h1>
+                        <p class="mb-0">A flawless, healthy, and refreshing skin is more than</p>
+                        <p class="mb-0">just hydration. Introducing our new scientifically-</p>
+                        <p class="mb-4">proven and battle-tested skin care product that</p>
+                        <p class="mb-4">repairs your skin from the inside.</p>
+                    </div>
+
+                    <!-- Sliding Product Cards -->
+                    <div class="col-12 col-lg-6 d-flex justify-content-center justify-content-lg-end">
+                        <div id="cardCarousel" class="carousel slide position-relative card-max-width w-100" data-bs-ride="false" data-bs-interval="false">
+                            <div class="carousel-inner">
+                                <!-- Card 1 -->
+                                <div class="carousel-item active">
+                                    <div class="bg-white p-4 text-center">
+                                        <img src="img/Rectangle 5.png" class="img-fluid mb-3" alt="Product">
+                                        <p class="text-uppercase mb-1 small">PORTLAND BALANCE</p>
+                                        <h5 class="f-tenor mb-3">Detox Hydration Mask</h5>
+                                        <p class="mb-0"><span class="text-decoration-line-through text-muted">$35.00</span> <span class="text-danger fw-bold">$50.00</span></p>
+                                    </div>
+                                </div>
+                                <!-- Card 2 -->
+                                <div class="carousel-item">
+                                    <div class="bg-white p-4 text-center">
+                                        <img src="img/Rectangle 6.png" class="img-fluid mb-3" alt="Product">
+                                        <p class="text-uppercase mb-1 small">PORTLAND BALANCE</p>
+                                        <h5 class="f-tenor mb-3">Vitamin C Serum</h5>
+                                        <p class="mb-0"><span class="text-decoration-line-through text-muted">$40.00</span> <span class="text-danger fw-bold">$55.00</span></p>
+                                    </div>
+                                </div>
+                                <!-- Card 3 -->
+                                <div class="carousel-item">
+                                    <div class="bg-white p-4 text-center">
+                                        <img src="img/Rectangle 7.png" class="img-fluid mb-3" alt="Product">
+                                        <p class="text-uppercase mb-1 small">PORTLAND BALANCE</p>
+                                        <h5 class="f-tenor mb-3">Retinol Night Cream</h5>
+                                        <p class="mb-0"><span class="text-decoration-line-through text-muted">$45.00</span> <span class="text-danger fw-bold">$60.00</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Navigation Buttons on Card -->
+                            <button class="carousel-control-prev position-absolute top-50 start-0 translate-middle bg-white rounded-circle d-flex align-items-center justify-content-center border-0 shadow slider-nav-btn" type="button" data-bs-target="#cardCarousel" data-bs-slide="prev">
+                                <i class="bi bi-arrow-left text-dark fs-4"></i>
+                            </button>
+                            <button class="carousel-control-next position-absolute top-50 end-0 translate-middle bg-white rounded-circle d-flex align-items-center justify-content-center border-0 shadow slider-nav-btn" type="button" data-bs-target="#cardCarousel" data-bs-slide="next">
+                                <i class="bi bi-arrow-right text-dark fs-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!------ Slider Section ------>
+
+    <!------ Article ------>
+    <section class="container my-5">
+        <article class="d-flex align-items-center">
+            <header class="f-tenor fs-3">Latest Article</header>
+            <section class="ms-auto"><button class="border-0 text-decoration-underline bg-transparent">Read All</button>
+            </section>
+        </article>
+        <section class="row g-3 mt-4 text-white">
+            <section class="col-12 col-md-4">
+                <section class="card p-0 border-0 rounded-0">
+                    <img src="img/Rectangle 39.png" class="card-img object-fit-cover" alt="...">
+                    <section class="card-img-overlay d-flex flex-column">
+                        <section class="mt-2 ms-1">
+                            <p>Health</p>
+                        </section>
+                        <article class="container mt-auto mb-2 d-flex p-2">
+                            <section>
+                                <p class="card-text mb-0 f-tenor fs-4">5 Everyday Meals That Might Be Harming Your Body</p>
+                                <p class="card-text ">November 18, 2022 - by Helen Smith</p>
+                            </section>
+                        </article>
+                    </section>
+                </section>
+            </section>
+            <section class="col-12 col-md-4">
+                <section class="card p-0 border-0 rounded-0">
+                    <img src="img/Rectangle 40.png" class="card-img object-fit-cover" alt="...">
+                    <section class="card-img-overlay d-flex flex-column">
+                        <section class="mt-2 ms-1 d-flex">
+                            <p class="me-3">Face</p>
+                            <p>Skin</p>
+                        </section>
+                        <article class="container mt-auto mb-2 d-flex p-2">
+                            <section>
+                                <p class="card-text mb-0 f-tenor fs-4">10 Tips to Naturally Cure Dry Lips and Dry Skin</p>
+                                <p class="card-text ">November 18, 2022 - by Helen Smith</p>
+                            </section>
+                        </article>
+                    </section>
+                </section>
+            </section>
+            <section class="col-12 col-md-4">
+                <section class="card p-0 border-0 rounded-0">
+                    <img src="img/Rectangle 41.png" class="card-img object-fit-cover" alt="...">
+                    <section class="card-img-overlay d-flex flex-column">
+                        <section class="mt-2 ms-1">
+                            <p>Skin</p>
+                        </section>
+                        <article class="container mt-auto mb-2 d-flex p-2">
+                            <section>
+                                <p class="card-text mb-0 f-tenor fs-4">No More Red Skin Under The Sun with These 5 Oils</p>
+                                <p class="card-text ">November 18, 2022 - by Helen Smith</p>
+                            </section>
+                        </article>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+    <!------ Article ------>
+
+    <!------ Footer ------>
+    <footer class="bg-creem py-5">
+        <section class="container">
+            <section class="row g-4 ">
+                <!-- Company Info -->
+                <section class="col-lg-4 col-12">
+                    <p class="fw-bold mb-3"><img src="img/Balance 2.png" alt=""></p>
+                    <p class="opacity-75 text-secondary">Special thanks to NATURALLOGIC  for generously providing us with their stunning product imagery. Kindly  visit their website to make real purchases of their products.</p>
+                    <section class="d-flex gap-4 mt-2 fs-4">
+                        <i class="bi bi-facebook"></i>
+                        <i class="bi bi-instagram"></i>
+                        <i class="bi bi-twitter"></i>
+                    </section>
+                </section>
+
+                <!-- Presets -->
+                <section class="col-lg-2 col-md-4 col-6">
+                    <h6 class="fw-bold mb-3">Presets</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="" class="text-decoration-none text-secondary">Heartbeat</a></li>
+                        <li class="mb-2"><a href="" class="text-decoration-none text-secondary">Cold Brew</a></li>
+                        <li class="mb-2"><a href="" class="text-decoration-none text-secondary">Balance</a></li>
+                        <li class="mb-2"><a href="" class="text-decoration-none text-secondary">Sparkle</a></li>
+                        <li class="mb-2"><a href="" class="text-decoration-none text-secondary">Indian Summer</a></li>
+                    </ul>
+                </section>
+
+                <!-- Collections -->
+                <section class="col-lg-2 col-md-4 col-6">
+                    <h6 class="fw-bold mb-3">Collections</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="" class="text-decoration-none text-secondary">Sale</a></li>
+                        <li class="mb-2"><a href="" class="text-decoration-none text-secondary">Body</a></li>
+                        <li class="mb-2"><a href="" class="text-decoration-none text-secondary">Face</a></li>
+                        <li class="mb-2"><a href="" class="text-decoration-none text-secondary">Hair</a></li>
+                    </ul>
+                </section>
+
+                <!-- Newsletter -->
+                <section class="col-lg-4 col-12">
+                    <h6 class="fw-bold mb-3">Subscribe to our latest newsletter</h6>
+                    <p class="opacity-75 text-secondary">To help changemakers like you feel your best.</p>
+                    <section class="input-group mt-3 d-flex flex-column">
+                        <input type="email" class="input-news rounded-pill" placeholder="Enter your email">
+                        <section class="pt-2">
+                            <button class="btn bg-dark-yellow px-4 text-white rounded-pill" type="button">Subscribe</button>
+                        </section>
+                    </section>
+                </section>
+            </section>
+
+            <hr class="my-4 opacity-25">
+
+            <!-- Copyright -->
+            <section class="row align-items-center">
+                <section class="col-md-6 col-12 text-center text-md-start">
+                    <small class="opacity-75">&copy; Balance All Rights Reserved</small>
+                </section>
+                <section class="col-md-6 col-12 text-center text-md-end mt-3 mt-md-0">
+                    <img class="ps-1" src="img/svgexport-17.png" alt="">
+                    <img class="ps-1" src="img/svgexport-11.png" alt="">
+                    <img class="ps-1" src="img/svgexport-12.png" alt="">
+                    <img class="ps-1" src="img/svgexport-13.png" alt="">
+                    <img class="ps-1" src="img/svgexport-14.png" alt="">
+                    <img class="ps-1" src="img/svgexport-15.png" alt="">
+                    <img class="ps-1" src="img/svgexport-16.png" alt="">
+                </section>
+            </section>
+        </section>
+    </footer>
+    <!------ Footer ------>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
