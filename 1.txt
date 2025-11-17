@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ring Animation Buttons</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 50px;
+            font-size: 14px;
+        }
+
+        .demo-section {
+            margin-bottom: 60px;
+        }
+
+        .demo-section h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 22px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .demo-section p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            padding: 40px 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+
+        /* ================================================ */
+        /* ANIMATION 1: PULSING RINGS (Most Popular) */
+        /* ================================================ */
+        .btn-pulse {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #667eea;
+            border: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-pulse:hover {
+            transform: scale(1.1);
+        }
+
+        /* This creates the pulsing ring effect */
+        .btn-pulse::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 3px solid #667eea;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.9);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(1.3);
+                opacity: 0;
+            }
+        }
+
+        /* ================================================ */
+        /* ANIMATION 2: DOUBLE RINGS */
+        /* ================================================ */
+        .btn-double-ring {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #48bb78;
+            border: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn-double-ring::before,
+        .btn-double-ring::after {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            border: 2px solid #48bb78;
+            border-radius: 50%;
+            animation: doubleRing 2s infinite;
+        }
+
+        .btn-double-ring::after {
+            animation-delay: 0.5s;
+        }
+
+        @keyframes doubleRing {
+            0% {
+                transform: scale(0.8);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        /* ================================================ */
+        /* ANIMATION 3: ROTATING RING */
+        /* ================================================ */
+        .btn-rotate-ring {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #ed8936;
+            border: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn-rotate-ring::before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: -12px;
+            right: -12px;
+            bottom: -12px;
+            border: 3px solid transparent;
+            border-top-color: #ed8936;
+            border-right-color: #ed8936;
+            border-radius: 50%;
+            animation: rotate 1.5s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* ================================================ */
+        /* ANIMATION 4: WAVES (Sonar Effect) */
+        /* ================================================ */
+        .btn-waves {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #4299e1;
+            border: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn-waves::before,
+        .btn-waves::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 3px solid #4299e1;
+            border-radius: 50%;
+            animation: waves 3s infinite;
+        }
+
+        .btn-waves::after {
+            animation-delay: 1.5s;
+        }
+
+        @keyframes waves {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+
+        /* ================================================ */
+        /* ANIMATION 5: GLOW RING */
+        /* ================================================ */
+        .btn-glow {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #f56565;
+            border: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            animation: glow 2s infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 20px #f56565,
+                            0 0 40px #f56565,
+                            0 0 60px #f56565;
+            }
+            50% {
+                box-shadow: 0 0 40px #f56565,
+                            0 0 60px #f56565,
+                            0 0 80px #f56565;
+            }
+        }
+
+        /* ================================================ */
+        /* ANIMATION 6: CLICK RIPPLE (On Hover) */
+        /* ================================================ */
+        .btn-ripple {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #9f7aea;
+            border: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .btn-ripple::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-ripple:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* ================================================ */
+        /* ANIMATION 7: MULTIPLE RINGS (Triple Ring) */
+        /* ================================================ */
+        .btn-triple {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #38b2ac;
+            border: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .ring {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            border: 2px solid #38b2ac;
+            border-radius: 50%;
+            animation: tripleRing 3s infinite;
+        }
+
+        .ring:nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        .ring:nth-child(3) {
+            animation-delay: 2s;
+        }
+
+        @keyframes tripleRing {
+            0% {
+                transform: scale(0.8);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.8);
+                opacity: 0;
+            }
+        }
+
+        /* ================================================ */
+        /* ANIMATION 8: BREATHING RING */
+        /* ================================================ */
+        .btn-breathe {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #ed64a6;
+            border: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn-breathe::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 3px solid #ed64a6;
+            border-radius: 50%;
+            animation: breathe 2s infinite ease-in-out;
+        }
+
+        @keyframes breathe {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.3;
+            }
+        }
+
+        /* Code Section */
+        .code-section {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            overflow-x: auto;
+        }
+
+        .code-section pre {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .code-section .comment {
+            color: #6272a4;
+        }
+
+        .code-section .tag {
+            color: #ff79c6;
+        }
+
+        .code-section .attribute {
+            color: #50fa7b;
+        }
+
+        .code-section .value {
+            color: #f1fa8c;
+        }
+
+        .label {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 12px;
+            color: #666;
+            font-weight: bold;
+        }
+
+        .tip-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 5px;
+        }
+
+        .tip-box h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .tip-box p {
+            color: #856404;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            .button-container {
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Circular Button Ring Animations</h1>
+        <p class="subtitle">8 Different Ring Animation Effects - Click to Test!</p>
+
+        <!-- Animation 1 -->
+        <div class="demo-section">
+            <h2>1. Pulsing Ring (Most Popular) ⭐</h2>
+            <p>A single ring that pulses outward continuously. Perfect for "call to action" buttons!</p>
+            
+            <div class="button-container">
+                <div>
+                    <button class="btn-pulse">CLICK</button>
+                    <div class="label">Pulsing Ring</div>
+                </div>
+            </div>
+
+            <div class="code-section">
+<pre><span class="comment">/* HTML */</span>
+<span class="tag">&lt;button</span> <span class="attribute">class</span>=<span class="value">"btn-pulse"</span><span class="tag">&gt;</span>CLICK<span class="tag">&lt;/button&gt;</span>
+
+<span class="comment">/* CSS */</span>
+.btn-pulse {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #667eea;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+<span class="comment">/* This creates the ring */</span>
+.btn-pulse::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 3px solid #667eea;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+<span class="comment">/* This animates the ring */</span>
+@keyframes pulse {
+    0% {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1.3);
+        opacity: 0;
+    }
+}</pre>
+            </div>
+        </div>
+
+        <!-- Animation 2 -->
+        <div class="demo-section">
+            <h2>2. Double Rings</h2>
+            <p>Two rings that pulse outward one after another.</p>
+            
+            <div class="button-container">
+                <div>
+                    <button class="btn-double-ring">GO</button>
+                    <div class="label">Double Rings</div>
+                </div>
+            </div>
+
+            <div class="code-section">
+<pre><span class="comment">/* CSS */</span>
+.btn-double-ring::before,
+.btn-double-ring::after {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    border: 2px solid #48bb78;
+    border-radius: 50%;
+    animation: doubleRing 2s infinite;
+}
+
+<span class="comment">/* Second ring starts 0.5s later */</span>
+.btn-double-ring::after {
+    animation-delay: 0.5s;
+}
+
+@keyframes doubleRing {
+    0% {
+        transform: scale(0.8);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}</pre>
+            </div>
+        </div>
+
+        <!-- Animation 3 -->
+        <div class="demo-section">
+            <h2>3. Rotating Ring</h2>
+            <p>A ring that continuously rotates around the button.</p>
+            
+            <div class="button-container">
+                <div>
+                    <button class="btn-rotate-ring">SPIN</button>
+                    <div class="label">Rotating Ring</div>
+                </div>
+            </div>
+
+            <div class="code-section">
+<pre><span class="comment">/* CSS */</span>
+.btn-rotate-ring::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: -12px;
+    border: 3px solid transparent;
+    border-top-color: #ed8936;
+    border-right-color: #ed8936;
+    border-radius: 50%;
+    animation: rotate 1.5s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}</pre>
+            </div>
+        </div>
+
+        <!-- Animation 4 -->
+        <div class="demo-section">
+            <h2>4. Waves (Sonar Effect)</h2>
+            <p>Multiple waves that expand outward like sonar.</p>
+            
+            <div class="button-container">
+                <div>
+                    <button class="btn-waves">PING</button>
+                    <div class="label">Wave Rings</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Animation 5 -->
+        <div class="demo-section">
+            <h2>5. Glowing Ring</h2>
+            <p>A glowing shadow effect that pulses.</p>
+            
+            <div class="button-container">
+                <div>
+                    <button class="btn-glow">GLOW</button>
+                    <div class="label">Glow Effect</div>
+                </div>
+            </div>
+
+            <div class="code-section">
+<pre><span class="comment">/* CSS */</span>
+.btn-glow {
+    animation: glow 2s infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 20px #f56565,
+                    0 0 40px #f56565,
+                    0 0 60px #f56565;
+    }
+    50% {
+        box-shadow: 0 0 40px #f56565,
+                    0 0 60px #f56565,
+                    0 0 80px #f56565;
+    }
+}</pre>
+            </div>
+        </div>
+
+        <!-- Animation 6 -->
+        <div class="demo-section">
+            <h2>6. Ripple on Hover</h2>
+            <p>Hover over the button to see the ripple effect!</p>
+            
+            <div class="button-container">
+                <div>
+                    <button class="btn-ripple">HOVER</button>
+                    <div class="label">Hover Me!</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Animation 7 -->
+        <div class="demo-section">
+            <h2>7. Triple Rings</h2>
+            <p>Three rings that pulse outward in sequence.</p>
+            
+            <div class="button-container">
+                <div>
+                    <button class="btn-triple">
+                        <span class="ring"></span>
+                        <span class="ring"></span>
+                        <span class="ring"></span>
+                        START
+                    </button>
+                    <div class="label">Triple Rings</div>
+                </div>
+            </div>
+
+            <div class="code-section">
+<pre><span class="comment">/* HTML */</span>
+<span class="tag">&lt;button</span> <span class="attribute">class</span>=<span class="value">"btn-triple"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;span</span> <span class="attribute">class</span>=<span class="value">"ring"</span><span class="tag">&gt;&lt;/span&gt;</span>
+    <span class="tag">&lt;span</span> <span class="attribute">class</span>=<span class="value">"ring"</span><span class="tag">&gt;&lt;/span&gt;</span>
+    <span class="tag">&lt;span</span> <span class="attribute">class</span>=<span class="value">"ring"</span><span class="tag">&gt;&lt;/span&gt;</span>
+    START
+<span class="tag">&lt;/button&gt;</span>
+
+<span class="comment">/* CSS */</span>
+.ring {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    border: 2px solid #38b2ac;
+    border-radius: 50%;
+    animation: tripleRing 3s infinite;
+}
+
+<span class="comment">/* Each ring starts at different time */</span>
+.ring:nth-child(2) {
+    animation-delay: 1s;
+}
+.ring:nth-child(3) {
+    animation-delay: 2s;
+}</pre>
+            </div>
+        </div>
+
+        <!-- Animation 8 -->
+        <div class="demo-section">
+            <h2>8. Breathing Ring</h2>
+            <p>A ring that "breathes" in and out smoothly.</p>
+            
+            <div class="button-container">
+                <div>
+                    <button class="btn-breathe">LIVE</button>
+                    <div class="label">Breathing Ring</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tips Section -->
+        <div class="tip-box">
+            <h3>💡 How to Use in Your Website:</h3>
+            <p><strong>Step 1:</strong> Copy the CSS code for your favorite animation</p>
+            <p><strong>Step 2:</strong> Add the class to your button: <code>&lt;button class="btn-pulse"&gt;Click&lt;/button&gt;</code></p>
+            <p><strong>Step 3:</strong> Customize colors by changing the hex codes (e.g., #667eea)</p>
+        </div>
+
+        <!-- Quick Customization Guide -->
+        <div class="demo-section">
+            <h2>🎨 Quick Customization Guide</h2>
+            <div class="code-section">
+<pre><span class="comment">/* Change Animation Speed */</span>
+animation: pulse 2s infinite;  <span class="comment">/* Change '2s' to '1s' for faster, '3s' for slower */</span>
+
+<span class="comment">/* Change Button Size */</span>
+width: 80px;   <span class="comment">/* Make bigger: 100px, smaller: 60px */</span>
+height: 80px;
+
+<span class="comment">/* Change Ring Color */</span>
+border: 3px solid #667eea;  <span class="comment">/* Change #667eea to any color */</span>
+
+<span class="comment">/* Change Button Color */</span>
+background: #667eea;  <span class="comment">/* Change to match your website theme */</span>
+
+<span class="comment">/* Change Ring Distance from Button */</span>
+top: -10px;    <span class="comment">/* Make bigger: -15px, smaller: -5px */</span>
+left: -10px;
+right: -10px;
+bottom: -10px;</pre>
+            </div>
+        </div>
+
+        <!-- For Your Website -->
+        <div class="tip-box" style="background: #d4edda; border-left-color: #28a745;">
+            <h3>✅ Best for Your Interior Design Website:</h3>
+            <p><strong>Use Pulsing Ring (#1)</strong> for your "FIND YOUR STYLE" button - draws attention!</p>
+            <p><strong>Use Double Rings (#2)</strong> for "CONTACT US" or "GET STARTED" buttons</p>
+            <p><strong>Use Glow Effect (#5)</strong> for special offers or featured buttons</p>
+        </div>
+
+    </div>
+
+    <script>
+        // ============================================
+        // Make all buttons clickable for demo
+        // ============================================
+        var allButtons = document.querySelectorAll('button');
+        
+        allButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                alert('Button clicked! You can navigate to another page here.');
+            });
+        });
+    </script>
+</body>
+</html>
